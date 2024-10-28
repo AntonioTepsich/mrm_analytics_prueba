@@ -1,0 +1,11 @@
+fastapi
+pdfminer.six
+uvicorn
+python-dotenv
+python-multipart
+pytest
+httpx
+pytesseract
+PyMuPDF
+numpy
+opencv-python
