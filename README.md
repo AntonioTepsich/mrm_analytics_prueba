@@ -1,10 +1,10 @@
 # MRM ANALYTICS - PRUEBA TEPSICH
 
-# PDF a Texto
+# .PDF a .txt
 Este proyecto es un servicio backend basado en FastAPI, diseñado para extraer texto de archivos PDF y proporcionar una API RESTful para gestionar las cargas de archivos y la extracción de texto. El proyecto es escalable y puede manejar fácilmente diferentes tipos de PDFs a través de una arquitectura modular de extractores.
 
 ## Sobre el codigo:
-En la carpeta "app"(backend), en cada una de las subcarpetas esta un archivo .md el cual explica la importancia de esa subcarpeta 
+En la carpeta "app"(backend), en cada una de las subcarpetas esta un archivo .md el cual explica la importancia de esa subcarpeta. 
 
 ## Cómo Funciona
 1. **Carga de Archivos**: El usuario carga un archivo PDF a través del frontend (o Postman) mencionando el tipo de documento a extraer.
@@ -27,9 +27,14 @@ En la carpeta "app"(backend), en cada una de las subcarpetas esta un archivo .md
 - **app**: Contiene la lógica principal del servicio de extraccion, incluyendo los endpoints.
   - **api**: Define los endpoints RESTful para interactuar con el servicio.
     - **v1**: Contiene las rutas de la versión 1 de la API, como la carga y extracción de PDFs.
+  - **core**: Contiene configuraciones esenciales y utilidades
+    comunes para el proyecto.
+  - **models**: contiene la definición del modelo de respuesta para
+    la API del proyecto.
   - **services**: Contiene la lógica para extraer texto de los PDFs.
     - **extractors**: Cada extractor específico está implementado aquí (ej. Test1Extractor, Test2Extractor). Cada uno de estos extractores se encarga de procesar diferentes tipos de documentos.
     - **utils**: Funciones auxiliares comunes, como la de convertir pdf a imagen, que se utilizan en los extractores y otros servicios.
+- **pdf-extractor-frontend**: Frontend simple de la app.
 - **tests**: Pruebas automatizadas para validar la funcionalidad del proyecto. Aquí se encuentran los tests unitarios para los extractores y otras funcionalidades clave del sistema.
 
 ## Requisitos
@@ -51,9 +56,6 @@ En la carpeta "app"(backend), en cada una de las subcarpetas esta un archivo .md
    ```sh
    docker run -d -p 8000:8000 pdf-extractor-backend
    ```
-
-3. **Endpoints de la API**:
-   - Cargar un PDF y extraer texto: `POST /api/v1/extract-pdf`
 
 ### Frontend:
 1. **Instalar package**:
